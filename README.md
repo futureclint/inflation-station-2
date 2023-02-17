@@ -1,1 +1,1 @@
-# inflation-station-2
+# Inflation Station 2
