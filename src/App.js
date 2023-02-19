@@ -10,7 +10,15 @@ function App() {
       </header>
       <hr />
       <main>
-
+        <form>
+          <input type="text" placeholder="Initial Year" required />
+          <input type="text" placeholder="Initial Amount" required />
+          <br />
+          <input type="text" placeholder="Final Year" required />
+          <input type="text" placeholder="Final Amount" disabled />
+          <br />
+          <button>Calculate</button>
+        </form>
       </main>
       <hr />
       <footer>
