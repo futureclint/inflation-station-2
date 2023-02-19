@@ -1,5 +1,5 @@
-import './css/App.css';
-import './css/styles.css';
+import './css/main.css';
+import Calculate from './components/Calculate';
 
 function App() {
   return (
@@ -10,15 +10,7 @@ function App() {
       </header>
       <hr />
       <main>
-        <form>
-          <input type="text" placeholder="Initial Year" required />
-          <input type="text" placeholder="Initial Amount" required />
-          <br />
-          <input type="text" placeholder="Final Year" required />
-          <input type="text" placeholder="Final Amount" disabled />
-          <br />
-          <button>Calculate</button>
-        </form>
+        <Calculate />
       </main>
       <hr />
       <footer>

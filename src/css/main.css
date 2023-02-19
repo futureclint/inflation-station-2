@@ -1,18 +1,21 @@
 body {
   padding: 30px;
   background-color: #1b1c1d;
-  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
   color: white;
 }
+
 h1, h2, h3, h4, h5, p {
   margin: 0;
 }
+
 hr {
   height: 1px;
   margin: 30px 0;
   border: none;
   background-color: #3b3c3d;
 }
+
 a {
   color: dodgerblue;
 }
@@ -22,6 +25,8 @@ input {
   margin: 10px;
   font-size: 1em;
 }
+
 button {
   padding: 4px 6px;
+  margin: 10px;
 }
