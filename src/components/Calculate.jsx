@@ -22,40 +22,52 @@ function Calculate() {
       }
     ])
 
-    // Clear states back to null
-    setInitialYear(0);
-    setInitialAmount(0);
-    setFinalYear(0);
+    // Clear states back to initial state
+    setInitialYear('');
+    setInitialAmount('');
+    setFinalYear('');
   };
 
   return (
-    <form onSubmit={submit}>
-      <input
-        value={initialYear}
-        onChange={event => setInitialYear(event.target.value)}
-        type="text"
-        placeholder="Initial Year"
-        required
-      />
-      <input
-        value={initialAmount}
-        onChange={event => setInitialAmount(event.target.value)}
-        type="text"
-        placeholder="Initial Amount"
-        required
-      />
-      <br />
-      <input
-        value={finalYear}
-        onChange={event => setFinalYear(event.target.value)}
-        type="text"
-        placeholder="Final Year"
-        required
-      />
-      <input type="text" placeholder="Final Amount" disabled />
-      <br />
-      <button>Calculate</button>
-    </form>
+    <div className="calculate">
+      <form onSubmit={submit}>
+        <input
+          value={initialYear}
+          onChange={event => setInitialYear(event.target.value)}
+          type="text"
+          placeholder="Initial Year"
+          required
+        />
+        <input
+          value={initialAmount}
+          onChange={event => setInitialAmount(event.target.value)}
+          type="text"
+          placeholder="Initial Amount"
+          required
+        />
+        <br />
+        <input
+          value={finalYear}
+          onChange={event => setFinalYear(event.target.value)}
+          type="text"
+          placeholder="Final Year"
+          required
+        />
+        <input type="text" placeholder="Final Amount" disabled />
+        <br />
+        <button>Calculate</button>
+      </form>
+
+      {/* Temp Area: output calculations */}
+      { calculations.length > 0 ?
+      <ul>
+        {calculations.map((calculation, index) => (
+          <li key={index}>Initial Year: {calculation.initialYear}, Initial Amount: ${calculation.initialAmount}, Final Year: {calculation.finalYear}</li>
+        ))}
+      </ul>
+      : <em>There are no calculations</em> }
+
+    </div>
   );
 }
 
