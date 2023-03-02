@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import data from '../data/cpidata.json';
 
 function Calculate({calculations, setCalculations}) {
 
