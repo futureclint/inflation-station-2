@@ -1,7 +1,15 @@
+import { useState } from 'react';
 import './css/main.css';
 import Calculate from './components/Calculate';
+import Calculations from './components/Calculations';
 
 function App() {
+
+  // TEMP: testing child to parent data
+  const [data, setData] = useState('');
+  const childToParent = (childData) => {
+    setData(childData);
+  }
 
   return (
     <div className="App">
@@ -11,7 +19,11 @@ function App() {
       </header>
       <hr />
       <main>
-        <Calculate />
+        <Calculate childToParent={childToParent} />
+        <br />
+        <span>{data}</span>
+        <br />
+        <Calculations />
       </main>
       <hr />
       <footer>

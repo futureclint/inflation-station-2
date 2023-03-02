@@ -1,11 +1,15 @@
 import { useState } from 'react';
 
-function Calculate() {
+function Calculate({childToParent}) {
 
+  // State Variables
   const [initialYear, setInitialYear] = useState('');
   const [initialAmount, setInitialAmount] = useState('');
   const [finalYear, setFinalYear] = useState('');
   const [calculations, setCalculations] = useState([]);
+
+  // TEMP: Testing child to parent data
+  const data = "This is data from child to parent";
 
   // Handle form submission
   const submit = (event) => {
@@ -66,6 +70,10 @@ function Calculate() {
         ))}
       </ul>
       : <em>There are no calculations</em> }
+
+      {/* TEMP: Testing child to parent data */}
+      <br />
+      <button onClick={() => childToParent(data)}>Click Child</button>
 
     </div>
   );
