@@ -5,11 +5,8 @@ import Calculations from './components/Calculations';
 
 function App() {
 
-  // TEMP: testing child to parent data
-  const [data, setData] = useState('');
-  const childToParent = (childData) => {
-    setData(childData);
-  }
+  // State Variables
+  const [calculations, setCalculations] = useState([]); // array of calculations
 
   return (
     <div className="App">
@@ -19,11 +16,13 @@ function App() {
       </header>
       <hr />
       <main>
-        <Calculate childToParent={childToParent} />
-        <br />
-        <span>{data}</span>
-        <br />
-        <Calculations />
+        <Calculate
+          calculations={calculations}
+          setCalculations={setCalculations}
+         />
+        <Calculations
+          calculations={calculations}
+        />
       </main>
       <hr />
       <footer>

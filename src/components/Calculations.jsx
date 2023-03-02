@@ -1,7 +1,13 @@
-function Calculations() {
+function Calculations({calculations}) {
   return (
     <div className="calculations">
-      <em>Calculations list</em>
+      { calculations.length > 0 ?
+      <ul>
+        {calculations.map((calculation, index) => (
+          <li key={index}>Initial Year: {calculation.initialYear}, Initial Amount: ${calculation.initialAmount}, Final Year: {calculation.finalYear}</li>
+        ))}
+      </ul>
+      : <em>There are no calculations</em> }
     </div>
   );
 }

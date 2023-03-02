@@ -1,24 +1,22 @@
 import { useState } from 'react';
 
-function Calculate({childToParent}) {
+function Calculate({calculations, setCalculations}) {
 
   // State Variables
   const [initialYear, setInitialYear] = useState('');
   const [initialAmount, setInitialAmount] = useState('');
   const [finalYear, setFinalYear] = useState('');
-  const [calculations, setCalculations] = useState([]);
-
-  // TEMP: Testing child to parent data
-  const data = "This is data from child to parent";
 
   // Handle form submission
   const submit = (event) => {
     // Prevent browser from submitting POST request
     event.preventDefault();
 
-    // Update list of calculations
+    // Set new calculations state
     setCalculations([
+      // Preserve existing calculations
       ...calculations,
+      // Add new calculation to the end
       {
         initialYear: initialYear,
         initialAmount: initialAmount,
@@ -26,7 +24,7 @@ function Calculate({childToParent}) {
       }
     ])
 
-    // Clear states back to initial state
+    // Clear state variables back to their initial state
     setInitialYear('');
     setInitialAmount('');
     setFinalYear('');
@@ -61,19 +59,6 @@ function Calculate({childToParent}) {
         <br />
         <button>Calculate</button>
       </form>
-
-      {/* Temp Area: output calculations */}
-      { calculations.length > 0 ?
-      <ul>
-        {calculations.map((calculation, index) => (
-          <li key={index}>Initial Year: {calculation.initialYear}, Initial Amount: ${calculation.initialAmount}, Final Year: {calculation.finalYear}</li>
-        ))}
-      </ul>
-      : <em>There are no calculations</em> }
-
-      {/* TEMP: Testing child to parent data */}
-      <br />
-      <button onClick={() => childToParent(data)}>Click Child</button>
 
     </div>
   );
