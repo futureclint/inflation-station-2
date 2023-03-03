@@ -4,7 +4,7 @@ function Calculations({calculations}) {
       { calculations.length > 0 ?
       <ul>
         {calculations.map((calculation, index) => (
-          <li key={index}>Initial Year: {calculation.initialYear}, Initial Amount: ${calculation.initialAmount}, Final Year: {calculation.finalYear}</li>
+          <li key={index}>Initial Year: {calculation.initialYear}, Initial Amount: ${calculation.initialAmount}, Final Year: {calculation.finalYear}, Final Amount: {calculation.finalAmount}</li>
         ))}
       </ul>
       : <em>There are no calculations</em> }

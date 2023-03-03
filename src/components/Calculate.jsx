@@ -8,10 +8,19 @@ function Calculate({calculations, setCalculations}) {
   const [initialAmount, setInitialAmount] = useState('');
   const [finalYear, setFinalYear] = useState('');
 
+  // Function to create new calculation
+  const newCalculation = (data) => {
+    let newValue = data[0].year;
+    return `test final amount ${newValue}`;
+  }
+
   // Handle form submission
   const submit = (event) => {
     // Prevent browser from submitting POST request
     event.preventDefault();
+
+    // Call create new calculation function, which returns final amount
+    let finalAmount = newCalculation(data);
 
     // Set new calculations state
     setCalculations([
@@ -21,7 +30,8 @@ function Calculate({calculations, setCalculations}) {
       {
         initialYear: initialYear,
         initialAmount: initialAmount,
-        finalYear: finalYear
+        finalYear: finalYear,
+        finalAmount: finalAmount
       }
     ])
 
