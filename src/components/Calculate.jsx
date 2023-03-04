@@ -9,9 +9,23 @@ function Calculate({calculations, setCalculations}) {
   const [finalYear, setFinalYear] = useState('');
 
   // Function to create new calculation
-  const newCalculation = (data) => {
-    let newValue = data[0].year;
-    return `test final amount ${newValue}`;
+  const newCalculation = (data, finalYear) => {
+
+    // Ensure given year is an integer value
+    let givenYear = parseInt(finalYear);
+
+    // Attempt to find the CPI for the given year and assign to dataObj
+    // If no year is found, returns as undefined
+    let dataObj = data.find(({year}) => year === givenYear);
+
+    // If dataObj is undefined, return an error
+    if (dataObj === undefined) {
+      return "There was an error finding the CPI data";
+    }
+    // Else return the CPI value of the object
+    else {
+      return dataObj.cpi;
+    }
   }
 
   // Handle form submission
@@ -20,7 +34,7 @@ function Calculate({calculations, setCalculations}) {
     event.preventDefault();
 
     // Call create new calculation function, which returns final amount
-    let finalAmount = newCalculation(data);
+    let finalAmount = newCalculation(data, finalYear);
 
     // Set new calculations state
     setCalculations([
