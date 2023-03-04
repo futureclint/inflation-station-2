@@ -9,11 +9,12 @@ function Calculate({calculations, setCalculations}) {
   const [finalYear, setFinalYear] = useState('');
 
   // Function to create new calculation
-  const newCalculation = (data, initialYear, finalYear) => {
+  const newCalculation = (data, initialYear, initialAmount, finalYear) => {
 
-    // Ensure given year is an integer value
+    // Ensure given year is an integer value and amount is a number
     let year1 = parseInt(initialYear);
     let year2 = parseInt(finalYear);
+    let amount1 = Number(initialAmount);
 
     // Attempt to find the CPI for the given year and assign to dataObj
     // If no year is found, returns as undefined
@@ -26,7 +27,10 @@ function Calculate({calculations, setCalculations}) {
     }
     // Else return the CPI value of the object
     else {
-      return `CPIs: ${dataObj1.cpi}, ${dataObj2.cpi}`;
+      // Assign CPI values of valid objects to variables
+      let cpi1 = dataObj1.cpi, cpi2 = dataObj2.cpi;
+      // Calculate final amount and return that value fixed to 2 decimal places
+      return (amount1 * (cpi2 / cpi1)).toFixed(2);
     }
   }
 
@@ -36,7 +40,7 @@ function Calculate({calculations, setCalculations}) {
     event.preventDefault();
 
     // Call create new calculation function, which returns final amount
-    let finalAmount = newCalculation(data, initialYear, finalYear);
+    let finalAmount = newCalculation(data, initialYear, initialAmount, finalYear);
 
     // Set new calculations state
     setCalculations([
