@@ -1,7 +1,9 @@
+import logo from '../images/inflation-station-logo_dark.svg';
+
 function Header() {
   return (
     <header>
-      <h1>Inflation Station</h1>
+      <img className="logo" src={logo} alt="Inflation Station" draggable="false" />
       <h2>An Inflation Calculator</h2>
     </header>
   );

@@ -20,6 +20,10 @@ a {
   color: dodgerblue;
 }
 
+.logo {
+  width: 405px;
+}
+
 input {
   padding: 4px 6px;
   margin: 10px;
