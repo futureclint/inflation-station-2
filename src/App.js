@@ -1,7 +1,9 @@
 import { useState } from 'react';
 import './css/main.css';
+import Header from './components/Header';
 import Calculate from './components/Calculate';
 import Calculations from './components/Calculations';
+import Footer from './components/Footer';
 
 function App() {
 
@@ -10,24 +12,20 @@ function App() {
 
   return (
     <div className="App">
-      <header>
-        <h1>Inflation Station</h1>
-        <h2>An Inflation Calculator</h2>
-      </header>
+      <Header />
       <hr />
       <main>
         <Calculate
           calculations={calculations}
           setCalculations={setCalculations}
          />
+        <hr />
         <Calculations
           calculations={calculations}
         />
       </main>
       <hr />
-      <footer>
-        <span>&copy; 2021&ndash;Present Clint Gunter</span>
-      </footer>
+      <Footer />
     </div>
   );
 }
