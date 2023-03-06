@@ -28,6 +28,6 @@
             <polygon id="Path" points="16.235 52.122 30.251 52.122 30.251 24.09 52.078 52.122 64.488 52.122 64.488 1.022 50.472 1.022 50.472 28.032 29.448 1.022 16.235 1.022"></polygon>
             <polygon id="Path" points="0 52.122 14.235 52.122 14.235 1.022 0 1.022"></polygon>
         </g>
-        <polygon id="Triangle-Mark" fill="url(#linearGradient-1)" points="50.6217473 0.9 50.6217473 52 -0.478252735 52"></polygon>
+        <polygon id="Triangle-Mark" fill="url(#linearGradient-1)" points="51.1003248 0.9 51.1003248 52 0.000324765162 52"></polygon>
     </g>
 </svg>
