@@ -65,20 +65,23 @@ function Calculate({calculations, setCalculations}) {
     <div className="calculate">
       <form onSubmit={submit}>
         <input
-          value={initialYear}
-          onChange={event => setInitialYear(event.target.value)}
-          type="text"
-          placeholder="Initial Year"
-          required
-        />
-        <input
           value={initialAmount}
           onChange={event => setInitialAmount(event.target.value)}
           type="text"
           placeholder="Initial Amount"
           required
         />
-        <br />
+        <span className="in">in</span>
+        <input
+          value={initialYear}
+          onChange={event => setInitialYear(event.target.value)}
+          type="text"
+          placeholder="Initial Year"
+          required
+        />
+        <span className="same">is the same as</span>
+        <input type="text" placeholder="Final Amount" disabled />
+        <span>in</span>
         <input
           value={finalYear}
           onChange={event => setFinalYear(event.target.value)}
@@ -86,7 +89,6 @@ function Calculate({calculations, setCalculations}) {
           placeholder="Final Year"
           required
         />
-        <input type="text" placeholder="Final Amount" disabled />
         <br />
         <button>Calculate</button>
       </form>

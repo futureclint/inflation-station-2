@@ -24,13 +24,18 @@ a {
   width: 405px;
 }
 
-input {
+.calculate input {
   padding: 4px 6px;
   margin: 10px;
   font-size: 1em;
 }
 
-button {
+.calculate span.same {
+  display: block;
+  margin: 10px;
+}
+
+.calculate button {
   padding: 4px 6px;
   margin: 10px;
 }
