@@ -80,7 +80,7 @@ function Calculate({calculations, setCalculations}) {
           required
         />
         <span className="same">is the same as</span>
-        <input type="text" placeholder="Final Amount" disabled />
+        <input type="text" placeholder="Final Amount" disabled="true" />
         <span>in</span>
         <input
           value={finalYear}
@@ -89,7 +89,6 @@ function Calculate({calculations, setCalculations}) {
           placeholder="Final Year"
           required
         />
-        <br />
         <button>Calculate</button>
       </form>
 
