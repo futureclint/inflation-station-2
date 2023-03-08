@@ -45,7 +45,7 @@ function Calculate({calculations, setCalculations}) {
     }
   }
 
-  // Handle form submission
+  // Function to handle form submission and assign calculations
   const submit = (event) => {
     // Prevent browser from submitting POST request
     event.preventDefault();
