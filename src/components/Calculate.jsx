@@ -10,12 +10,14 @@ function Calculate({calculations, setCalculations}) {
   const [finalAmount, setFinalAmount] = useState('');
 
   // Function to create new calculation
-  const newCalculation = (data, initialYear, initialAmount, finalYear) => {
+  const newCalculation = (data, initialAmount, initialYear, finalAmount, finalYear) => {
 
     // Ensure given year is an integer value and amount is a number
+    // Whichever amount was not given will become 0
     let year1 = parseInt(initialYear);
     let year2 = parseInt(finalYear);
     let amount1 = Number(initialAmount);
+    let amount2 = Number(finalAmount);
 
     // Attempt to find the CPI for the given year and assign to dataObj
     // If no year is found, returns as undefined
@@ -30,8 +32,16 @@ function Calculate({calculations, setCalculations}) {
     else {
       // Assign CPI values of valid objects to variables
       let cpi1 = dataObj1.cpi, cpi2 = dataObj2.cpi;
-      // Calculate final amount and return that value fixed to 2 decimal places
-      return (amount1 * (cpi2 / cpi1)).toFixed(2);
+
+      // Calculate and return final amount
+      // If amount is not 0, then it was given and we use it in the calculation
+      if (amount1 !== 0) {
+        return (amount1 * (cpi2 / cpi1));
+      } else if (amount2 !== 0) {
+        return (amount2 * (cpi1 / cpi2));
+      } else {
+        return "There was an error calculating the amount";
+      }
     }
   }
 
@@ -40,8 +50,21 @@ function Calculate({calculations, setCalculations}) {
     // Prevent browser from submitting POST request
     event.preventDefault();
 
-    // Call create new calculation function, which returns final amount
-    let finalAmount = newCalculation(data, initialYear, initialAmount, finalYear);
+    // Call the new calculation function and assign value to calculated amount
+    let calculatedAmount = newCalculation(data, initialAmount, initialYear, finalAmount, finalYear);
+
+    // Declare calculated variables for both amounts
+    let calInitial, calFinal;
+
+    // Assign amounts to both calculated variables, depending on which amount was given
+    // Make sure amounts are numbers fixed to 2 decimal places
+    if (initialAmount) {
+      calInitial = Number(initialAmount).toFixed(2);
+      calFinal = Number(calculatedAmount).toFixed(2);
+    } else if (finalAmount) {
+      calInitial = Number(calculatedAmount).toFixed(2);
+      calFinal = Number(finalAmount).toFixed(2);
+    }
 
     // Set new calculations state
     setCalculations([
@@ -50,15 +73,16 @@ function Calculate({calculations, setCalculations}) {
       // Add new calculation to the end
       {
         initialYear: initialYear,
-        initialAmount: initialAmount,
+        initialAmount: calInitial,
         finalYear: finalYear,
-        finalAmount: finalAmount
+        finalAmount: calFinal
       }
     ])
 
     // Clear state variables back to their initial state
-    setInitialYear('');
     setInitialAmount('');
+    setInitialYear('');
+    setFinalAmount('');
     setFinalYear('');
   };
 
