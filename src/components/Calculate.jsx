@@ -7,6 +7,7 @@ function Calculate({calculations, setCalculations}) {
   const [initialYear, setInitialYear] = useState('');
   const [initialAmount, setInitialAmount] = useState('');
   const [finalYear, setFinalYear] = useState('');
+  const [finalAmount, setFinalAmount] = useState('');
 
   // Function to create new calculation
   const newCalculation = (data, initialYear, initialAmount, finalYear) => {
@@ -68,8 +69,9 @@ function Calculate({calculations, setCalculations}) {
           value={initialAmount}
           onChange={event => setInitialAmount(event.target.value)}
           type="text"
-          placeholder="Initial Amount"
-          required
+          placeholder={ finalAmount ? "?" : "Initial Amount" }
+          disabled={ finalAmount ? true : false }
+          required={ finalAmount ? false : true }
         />
         <span className="in">in</span>
         <input
@@ -80,7 +82,14 @@ function Calculate({calculations, setCalculations}) {
           required
         />
         <span className="same">is the same as</span>
-        <input type="text" placeholder="Final Amount" disabled="true" />
+        <input
+          value={finalAmount}
+          onChange={event => setFinalAmount(event.target.value)}
+          type="text"
+          placeholder={ initialAmount ? "?" : "Final Amount"}
+          disabled={ initialAmount ? true : false }
+          required={ initialAmount ? false : true }
+        />
         <span>in</span>
         <input
           value={finalYear}

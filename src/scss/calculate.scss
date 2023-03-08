@@ -2,6 +2,10 @@
   padding: 4px 6px;
   margin: 10px;
   font-size: 1em;
+
+  &:disabled {
+    background-color: rgba(white,0.1);
+  }
 }
 .calculate span.same {
   display: block;
