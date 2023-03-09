@@ -88,6 +88,9 @@ function Calculate({calculations, setCalculations}) {
 
   return (
     <div className="calculate">
+      <div className="instructions">
+        <em>Enter any year between 1970–2023</em>
+      </div>
       <form onSubmit={submit}>
         <input
           value={initialAmount}
