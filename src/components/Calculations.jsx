@@ -4,10 +4,10 @@ function Calculations({calculations}) {
       { calculations.length > 0 ?
       <ul>
         {calculations.map((calculation, index) => (
-          <li key={index}>Initial Year: {calculation.initialYear}, Initial Amount: ${calculation.initialAmount}, Final Year: {calculation.finalYear}, Final Amount: ${calculation.finalAmount}</li>
+          <li key={index}><strong>${calculation.initialAmount}</strong> in <strong>{calculation.initialYear}</strong> is the same as <strong>${calculation.finalAmount}</strong> in <strong>{calculation.finalYear}</strong></li>
         ))}
       </ul>
-      : <em>There are no calculations</em> }
+      : <em>There are no calculations (yet)</em> }
     </div>
   );
 }

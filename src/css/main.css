@@ -43,3 +43,24 @@ a {
   padding: 4px 6px;
   margin: 10px;
 }
+
+.calculations ul {
+  padding: 0;
+  list-style-type: none;
+}
+
+.calculations li {
+  display: block;
+  padding: 12px;
+  margin-bottom: 1px;
+  background-color: #333339;
+  color: #ddddee;
+}
+
+.calculations strong {
+  padding: 4px 8px;
+  margin: 0 4px;
+  border: 1px solid #666669;
+  border-radius: 7px;
+  color: white;
+}
