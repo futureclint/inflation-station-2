@@ -86,8 +86,8 @@ function Calculate({calculations, setCalculations}) {
     setFinalYear('');
   };
 
-  // Function to test whether inputs are either numbers or empty strings
-  const testInput = (input) => {
+  // Function to test whether amount inputs are either numbers or empty strings
+  const testInputAmount = (input) => {
     if (Number(input)) {
       return true;
     } else if (input == '') {
@@ -98,7 +98,7 @@ function Calculate({calculations, setCalculations}) {
   }
 
   // Function to test whether year inputs are within the valid range
-  const testYear = (input) => {
+  const testInputYear = (input) => {
     if (input.length == 0) {
       return true;
     } else if (input.length == 1 && (input == '1' || input == '2')) {
@@ -123,7 +123,7 @@ function Calculate({calculations, setCalculations}) {
         <input
           value={initialAmount}
           // On change, call test input function, if input is valid set it, otherwise don't allow it
-          onChange={event => { if (testInput(event.target.value)) setInitialAmount(event.target.value); }}
+          onChange={event => { if (testInputAmount(event.target.value)) setInitialAmount(event.target.value); }}
           type="text"
           placeholder={ finalAmount ? "?" : "Initial Amount" }
           disabled={ finalAmount ? true : false }
@@ -133,7 +133,7 @@ function Calculate({calculations, setCalculations}) {
         <input
           value={initialYear}
           // On change, call test input function, if input is valid set it, otherwise don't allow it
-          onChange={event => { if (testYear(event.target.value)) setInitialYear(event.target.value); }}
+          onChange={event => { if (testInputYear(event.target.value)) setInitialYear(event.target.value); }}
           type="text"
           maxlength="4"
           placeholder="Initial Year"
@@ -143,7 +143,7 @@ function Calculate({calculations, setCalculations}) {
         <input
           value={finalAmount}
           // On change, call test input function, if input is valid set it, otherwise don't allow it
-          onChange={event => { if (testInput(event.target.value)) setFinalAmount(event.target.value); }}
+          onChange={event => { if (testInputAmount(event.target.value)) setFinalAmount(event.target.value); }}
           type="text"
           placeholder={ initialAmount ? "?" : "Final Amount"}
           disabled={ initialAmount ? true : false }
@@ -153,7 +153,7 @@ function Calculate({calculations, setCalculations}) {
         <input
           value={finalYear}
           // On change, call test input function, if input is valid set it, otherwise don't allow it
-          onChange={event => { if (testYear(event.target.value)) setFinalYear(event.target.value); }}
+          onChange={event => { if (testInputYear(event.target.value)) setFinalYear(event.target.value); }}
           type="text"
           maxlength="4"
           placeholder="Final Year"
