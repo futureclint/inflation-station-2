@@ -3,6 +3,9 @@ import data from '../data/cpidata.json';
 
 function Calculate({calculations, setCalculations}) {
 
+  // Constants
+  const currentYear = 2023;
+
   // State Variables
   const [initialYear, setInitialYear] = useState('');
   const [initialAmount, setInitialAmount] = useState('');
@@ -107,7 +110,7 @@ function Calculate({calculations, setCalculations}) {
       return true;
     } else if (input.length == 3 && (input > '190' && input < '203')) {
       return true;
-    } else if (input.length == 4 && (input > '1912' && input < '2024')) {
+    } else if (input.length == 4 && (input >= '1913' && input <= currentYear)) {
       return true;
     } else {
       return false;
@@ -117,7 +120,7 @@ function Calculate({calculations, setCalculations}) {
   return (
     <div className="calculate">
       <div className="instructions">
-        <em>Enter any year between 1913–2023</em>
+        <em>Enter any year between 1913–{currentYear}</em>
       </div>
       <form onSubmit={submit}>
         <input
