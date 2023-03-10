@@ -86,6 +86,17 @@ function Calculate({calculations, setCalculations}) {
     setFinalYear('');
   };
 
+  // Function to test whether inputs are either numbers or empty strings
+  const testInput = (input) => {
+    if (Number(input)) {
+      return true;
+    } else if (input === '') {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
   return (
     <div className="calculate">
       <div className="instructions">
@@ -94,7 +105,8 @@ function Calculate({calculations, setCalculations}) {
       <form onSubmit={submit}>
         <input
           value={initialAmount}
-          onChange={event => setInitialAmount(event.target.value)}
+          // On change, call test input function, if input is valid set it, otherwise don't allow it
+          onChange={event => { if (testInput(event.target.value)) setInitialAmount(event.target.value); }}
           type="text"
           placeholder={ finalAmount ? "?" : "Initial Amount" }
           disabled={ finalAmount ? true : false }
@@ -103,15 +115,18 @@ function Calculate({calculations, setCalculations}) {
         <span className="in">in</span>
         <input
           value={initialYear}
-          onChange={event => setInitialYear(event.target.value)}
+          // On change, call test input function, if input is valid set it, otherwise don't allow it
+          onChange={event => { if (testInput(event.target.value)) setInitialYear(event.target.value); }}
           type="text"
+          maxlength="4"
           placeholder="Initial Year"
           required
         />
         <span className="same">is the same as</span>
         <input
           value={finalAmount}
-          onChange={event => setFinalAmount(event.target.value)}
+          // On change, call test input function, if input is valid set it, otherwise don't allow it
+          onChange={event => { if (testInput(event.target.value)) setFinalAmount(event.target.value); }}
           type="text"
           placeholder={ initialAmount ? "?" : "Final Amount"}
           disabled={ initialAmount ? true : false }
@@ -120,8 +135,10 @@ function Calculate({calculations, setCalculations}) {
         <span>in</span>
         <input
           value={finalYear}
-          onChange={event => setFinalYear(event.target.value)}
+          // On change, call test input function, if input is valid set it, otherwise don't allow it
+          onChange={event => { if (testInput(event.target.value)) setFinalYear(event.target.value); }}
           type="text"
+          maxlength="4"
           placeholder="Final Year"
           required
         />
