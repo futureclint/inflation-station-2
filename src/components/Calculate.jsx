@@ -90,7 +90,24 @@ function Calculate({calculations, setCalculations}) {
   const testInput = (input) => {
     if (Number(input)) {
       return true;
-    } else if (input === '') {
+    } else if (input == '') {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  // Function to test whether year inputs are within the valid range
+  const testYear = (input) => {
+    if (input.length == 0) {
+      return true;
+    } else if (input.length == 1 && (input == '1' || input == '2')) {
+      return true;
+    } else if (input.length == 2 && (input == '19' || input == '20')) {
+      return true;
+    } else if (input.length == 3 && (input > '190' && input < '203')) {
+      return true;
+    } else if (input.length == 4 && (input > '1912' && input < '2024')) {
       return true;
     } else {
       return false;
@@ -116,7 +133,7 @@ function Calculate({calculations, setCalculations}) {
         <input
           value={initialYear}
           // On change, call test input function, if input is valid set it, otherwise don't allow it
-          onChange={event => { if (testInput(event.target.value)) setInitialYear(event.target.value); }}
+          onChange={event => { if (testYear(event.target.value)) setInitialYear(event.target.value); }}
           type="text"
           maxlength="4"
           placeholder="Initial Year"
@@ -136,7 +153,7 @@ function Calculate({calculations, setCalculations}) {
         <input
           value={finalYear}
           // On change, call test input function, if input is valid set it, otherwise don't allow it
-          onChange={event => { if (testInput(event.target.value)) setFinalYear(event.target.value); }}
+          onChange={event => { if (testYear(event.target.value)) setFinalYear(event.target.value); }}
           type="text"
           maxlength="4"
           placeholder="Final Year"
