@@ -8,6 +8,7 @@ function Calculate({calculations, setCalculations}) {
   const currentYear = data[data.length - 1].year;
 
   // State Variables
+  const [calcKey, setCalcKey] = useState(0);
   const [initialYear, setInitialYear] = useState('');
   const [initialAmount, setInitialAmount] = useState('');
   const [finalYear, setFinalYear] = useState('');
@@ -70,17 +71,21 @@ function Calculate({calculations, setCalculations}) {
       calFinal = Number(finalAmount).toFixed(2);
     }
 
+    // Iterate calculation key state for new key
+    setCalcKey(calcKey + 1);
+
     // Set new calculations state
     setCalculations([
-      // Preserve existing calculations
-      ...calculations,
-      // Add new calculation to the end
+      // Add new calculation to the beginning, assigning unique key
       {
+        key: calcKey,
         initialYear: initialYear,
         initialAmount: calInitial,
         finalYear: finalYear,
         finalAmount: calFinal
-      }
+      },
+      // Preserve existing calculations
+      ...calculations
     ])
 
     // Clear state variables back to their initial state
