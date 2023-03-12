@@ -3,8 +3,9 @@ import data from '../data/cpidata.json';
 
 function Calculate({calculations, setCalculations}) {
 
-  // Constants
-  const currentYear = 2023;
+  // Get starting and current (latest) years from CPI data and assign to constants
+  const startingYear = data[0].year;
+  const currentYear = data[data.length - 1].year;
 
   // State Variables
   const [initialYear, setInitialYear] = useState('');
@@ -120,7 +121,7 @@ function Calculate({calculations, setCalculations}) {
   return (
     <div className="calculate">
       <div className="instructions">
-        <em>Enter any year between 1913–{currentYear}</em>
+        <em>Enter any year between {startingYear}–{currentYear}</em>
       </div>
       <form onSubmit={submit}>
         <input
