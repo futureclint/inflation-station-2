@@ -15,6 +15,47 @@ function Calculate({calculations, setCalculations}) {
   const [finalYear, setFinalYear] = useState('');
   const [finalAmount, setFinalAmount] = useState('');
 
+  // Function to test whether amount inputs are either numbers or empty strings
+  const testInputAmount = (input) => {
+    if (Number(input)) {
+      return true;
+    } else if (input === '') {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  // Function to test whether year inputs are within the valid range as they are typed in
+  const testInputYear = (input) => {
+    // Create variables for first 1, 2, and 3 digit versions of starting and current year to be used below
+    let startingYearDigits1 = startingYear.toString().slice(0,1); // 1 for 1913
+    let  currentYearDigits1 =  currentYear.toString().slice(0,1); // 2 for 2023
+    let startingYearDigits2 = startingYear.toString().slice(0,2); // 19 for 1913
+    let  currentYearDigits2 =  currentYear.toString().slice(0,2); // 20 for 2023
+    let startingYearDigits3 = startingYear.toString().slice(0,3); // 191 for 1913
+    let  currentYearDigits3 =  currentYear.toString().slice(0,3); // 202 for 2023
+
+    if (input.length === 0) {
+      return true;
+      // If 1 digit and either 1 or 2 (for 1913 and 2023)
+    } else if (input.length === 1 && (input === startingYearDigits1 || input === currentYearDigits1)) {
+      return true;
+      // If 2 digits and either 19 or 20 (for 1913 and 2023)
+    } else if (input.length === 2 && (input === startingYearDigits2 || input === currentYearDigits2)) {
+      return true;
+      // If 3 digits and >= 191 or <= 202 (for 1913 and 2023)
+    } else if (input.length === 3 && (input >= startingYearDigits3 && input <= currentYearDigits3)) {
+      return true;
+      // If 4 digits and >= 1913 or <= 2023 (for 1913 and 2023)
+    } else if (input.length === 4 && (input >= startingYear && input <= currentYear)) {
+      return true;
+      // If none of the conditions above are satisfied, return as false
+    } else {
+      return false;
+    }
+  }
+
   // Function to handle form submission and assign calculations
   const submit = (event) => {
     // Prevent browser from submitting POST request
@@ -59,47 +100,6 @@ function Calculate({calculations, setCalculations}) {
     setFinalAmount('');
     setFinalYear('');
   };
-
-  // Function to test whether amount inputs are either numbers or empty strings
-  const testInputAmount = (input) => {
-    if (Number(input)) {
-      return true;
-    } else if (input === '') {
-      return true;
-    } else {
-      return false;
-    }
-  }
-
-  // Function to test whether year inputs are within the valid range as they are typed in
-  const testInputYear = (input) => {
-    // Create variables for first 1, 2, and 3 digit versions of starting and current year to be used below
-    let startingYearDigits1 = startingYear.toString().slice(0,1); // 1 for 1913
-    let  currentYearDigits1 =  currentYear.toString().slice(0,1); // 2 for 2023
-    let startingYearDigits2 = startingYear.toString().slice(0,2); // 19 for 1913
-    let  currentYearDigits2 =  currentYear.toString().slice(0,2); // 20 for 2023
-    let startingYearDigits3 = startingYear.toString().slice(0,3); // 191 for 1913
-    let  currentYearDigits3 =  currentYear.toString().slice(0,3); // 202 for 2023
-
-    if (input.length === 0) {
-      return true;
-      // If 1 digit and either 1 or 2 (for 1913 and 2023)
-    } else if (input.length === 1 && (input === startingYearDigits1 || input === currentYearDigits1)) {
-      return true;
-      // If 2 digits and either 19 or 20 (for 1913 and 2023)
-    } else if (input.length === 2 && (input === startingYearDigits2 || input === currentYearDigits2)) {
-      return true;
-      // If 3 digits and >= 191 or <= 202 (for 1913 and 2023)
-    } else if (input.length === 3 && (input >= startingYearDigits3 && input <= currentYearDigits3)) {
-      return true;
-      // If 4 digits and >= 1913 or <= 2023 (for 1913 and 2023)
-    } else if (input.length === 4 && (input >= startingYear && input <= currentYear)) {
-      return true;
-      // If none of the conditions above are satisfied, return as false
-    } else {
-      return false;
-    }
-  }
 
   return (
     <div className="calculate">
