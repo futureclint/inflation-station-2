@@ -122,7 +122,7 @@ function Calculate({calculations, setCalculations}) {
           // On change, call test input function, if input is valid set it, otherwise don't allow it
           onChange={event => { if (testInputYear(event.target.value)) setInitialYear(event.target.value); }}
           type="text"
-          maxlength="4"
+          maxLength="4"
           placeholder="Initial Year"
           required
         />
@@ -142,7 +142,7 @@ function Calculate({calculations, setCalculations}) {
           // On change, call test input function, if input is valid set it, otherwise don't allow it
           onChange={event => { if (testInputYear(event.target.value)) setFinalYear(event.target.value); }}
           type="text"
-          maxlength="4"
+          maxLength="4"
           placeholder="Final Year"
           required
         />
