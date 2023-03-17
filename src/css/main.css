@@ -44,8 +44,32 @@ a {
 
 .calculate button {
   display: block;
-  padding: 4px 6px;
+  padding: 8px 16px;
   margin: 10px;
+  border: 1px solid;
+  border-color: #1b1c1d;
+  border-radius: 7px;
+  background: #e222a9;
+  background: linear-gradient(90deg, #c623ff 0%, #ff2254 100%);
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.33);
+  font-size: 1em;
+  font-weight: bold;
+  color: white;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.33);
+  cursor: pointer;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.calculate button:hover {
+  border-color: white;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.67);
+}
+.calculate button:active {
+  position: relative;
+  top: 1px;
+  box-shadow: 0 0 6px rgb(0, 0, 0);
+}
+.calculate button:hover {
+  cursor: pointer;
 }
 
 .calculations ul {

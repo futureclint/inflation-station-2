@@ -16,6 +16,31 @@
 }
 .calculate button {
   display: block;
-  padding: 4px 6px;
+  padding: 8px 16px;
   margin: 10px;
+  border: 1px solid;
+  border-color: $background;
+  border-radius: 7px;
+  background: $brand-middle; // middle gradient value as a fallback
+  background: linear-gradient(90deg, $brand-start 0%, $brand-end 100%);
+  box-shadow: 0 1px 6px rgba(0,0,0,0.33);
+  font-size: 1em;
+  font-weight: bold;
+  color: white;
+  text-shadow: 0 1px 1px rgba(0,0,0,0.33);
+  cursor: pointer;
+  transition: border-color 0.2s,
+              box-shadow 0.2s;
+  &:hover {
+    border-color: white;
+    box-shadow: 0 1px 6px rgba(0,0,0,0.67);
+  }
+  &:active {
+    position: relative;
+    top: 1px;
+    box-shadow: 0 0 6px rgba(0,0,0,1.0);
+  }
+  &:hover {
+    cursor: pointer;
+  }
 }
