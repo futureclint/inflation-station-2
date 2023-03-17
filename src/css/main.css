@@ -1,5 +1,6 @@
 body {
-  padding: 30px;
+  padding: 0;
+  margin: 0;
   background-color: #1b1c1d;
   font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
   color: white;
@@ -20,8 +21,58 @@ a {
   color: dodgerblue;
 }
 
-.logo {
+@keyframes slide-in-message {
+  from {
+    top: -100px;
+  }
+  to {
+    top: 0px;
+  }
+}
+header .message {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  top: 0px;
+  background: linear-gradient(90deg, #ff2254 0%, #c623ff 100%);
+  animation-name: slide-in-message;
+  animation-duration: 1s;
+  animation-timing-function: ease;
+  transition: top 0.5s ease;
+}
+header .message.out {
+  top: -100px;
+}
+
+header .message span {
+  display: block;
+  margin: 3px 20px 6px 20px;
+}
+
+header .message button {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+header .message img {
+  width: 12px;
+  height: auto;
+  margin: 2px 20px 2px 20px;
+}
+
+header .title {
+  display: flex;
+  justify-content: space-between;
+  margin: 30px 20px;
+}
+
+header .logo {
   width: 405px;
+}
+
+header .subtitle {
+  font-size: 1.4em;
 }
 
 .calculate .instructions {
@@ -91,4 +142,8 @@ a {
   border: 1px solid #666669;
   border-radius: 7px;
   color: white;
+}
+
+footer span {
+  display: block;
 }
