@@ -4,15 +4,15 @@ import cross from '../images/cross.svg';
 
 function Header() {
 
-  const [messageOut, setMessageOut] = useState(false);
+  const [messageClose, setMessageClose] = useState(false);
 
   const closeMessage = () => {
-    setMessageOut(true);
+    setMessageClose(true);
   }
 
   return (
     <header>
-      <div className={messageOut ? 'message out' : 'message'}>
+      <div className={messageClose ? 'message close' : 'message'}>
         <span><em>This project is in active development, but I'm happy for you to try it out in the meantime!</em></span>
         <button onClick={closeMessage}>
           <img className="cross" src={cross} alt="Close" draggable="false" />
