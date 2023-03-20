@@ -158,10 +158,16 @@ header .subtitle {
 
 .calculations ul {
   display: block;
+  min-width: 768px;
   max-width: fit-content;
   padding: 0;
   margin: 0 auto;
   list-style-type: none;
+}
+@media (max-width: 768px) {
+  .calculations ul {
+    min-width: 0;
+  }
 }
 
 .calculations li {
@@ -179,6 +185,11 @@ header .subtitle {
   border: 1px solid #666669;
   border-radius: 7px;
   color: white;
+}
+
+.calculations .no-calculations {
+  display: block;
+  text-align: center;
 }
 
 footer {

@@ -9,7 +9,7 @@ function Calculations({calculations}) {
           <li key={calculation.key}><strong>${calculation.initialAmount}</strong> in <strong>{calculation.initialYear}</strong> is the same as <strong>${calculation.finalAmount}</strong> in <strong>{calculation.finalYear}</strong></li>
         ))}
       </ul>
-      : <em>There are no calculations (yet)</em> }
+      : <span className="no-calculations"><em>There are no calculations (yet)</em></span> }
     </div>
   );
 }
