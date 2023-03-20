@@ -136,7 +136,7 @@ function Calculate({calculations, setCalculations}) {
           disabled={ initialAmount ? true : false }
           required={ initialAmount ? false : true }
         />
-        <span>in</span>
+        <span className="in">in</span>
         <input
           value={finalYear}
           // On change, call test input function, if input is valid set it, otherwise don't allow it

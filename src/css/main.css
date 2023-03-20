@@ -85,7 +85,13 @@ header .subtitle {
 }
 
 .calculate {
-  padding: 0 20px;
+  width: fit-content;
+  margin: 0 auto;
+}
+@media (max-width: 540px) {
+  .calculate {
+    padding: 0 20px;
+  }
 }
 
 .calculate .instructions {
@@ -99,6 +105,16 @@ header .subtitle {
 }
 .calculate input:disabled {
   background-color: rgba(255, 255, 255, 0.1);
+}
+
+.calculate span.in {
+  display: inline-block;
+  margin: 10px;
+}
+@media (max-width: 540px) {
+  .calculate span.in {
+    display: block;
+  }
 }
 
 .calculate span.same {

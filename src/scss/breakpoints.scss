@@ -7,3 +7,10 @@
     @content;
   }
 }
+
+// Extra Small (xs)
+@mixin width-xs {
+  @media (max-width: 540px) {
+    @content;
+  }
+}

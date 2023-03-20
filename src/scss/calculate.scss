@@ -1,5 +1,9 @@
 .calculate {
-  padding: 0 20px;
+  width: fit-content;
+  margin: 0 auto;
+  @include width-xs {
+    padding: 0 20px;
+  }
 }
 
 .calculate .instructions {
@@ -12,6 +16,13 @@
 
   &:disabled {
     background-color: rgba(white,0.1);
+  }
+}
+.calculate span.in {
+  display: inline-block;
+  margin: 10px;
+  @include width-xs {
+    display: block;
   }
 }
 .calculate span.same {
