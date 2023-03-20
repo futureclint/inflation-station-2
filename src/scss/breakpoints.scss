@@ -1,0 +1,9 @@
+// Breakpoints
+// Usage: @include width-sm { }
+
+// Small (sm)
+@mixin width-sm {
+  @media (max-width: 768px) {
+    @content;
+  }
+}

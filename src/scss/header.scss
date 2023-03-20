@@ -1,13 +1,23 @@
 header .title {
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
   margin: 30px;
+
+  @include width-sm {
+    flex-direction: column;
+  }
 }
 
 header .logo {
-  width: 405px;
+  max-width: 405px;
 }
 
 header .subtitle {
-  font-size: 1.4em;
+  font-size: 1.25em;
+  font-weight: 400;
+  @include width-sm {
+    margin-top: 10px;
+    font-size: 1.0em;
+  }
 }
