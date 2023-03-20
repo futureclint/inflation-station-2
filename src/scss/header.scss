@@ -1,18 +1,16 @@
-$messageHeight: 30px;
-
 header .message {
   display: flex;
   justify-content: space-between; // spaces two children to start and end
   align-items: center; // vertical centering
   width: 100%;
-  height: $messageHeight;
+  height: fit-content; //$messageHeight;
   background: $brand-end; // fallback
   background: linear-gradient(90deg, $brand-end 0%, $brand-start 100%);
   transform-origin: bottom left; // so whole element hides out of sight to top no matter the height
   transition: transform 0.2s ease;
   overflow: hidden;
   &.close {
-    transform: translate(0, -$messageHeight); // move up out of sight
+    transform: translate(0, -100%); // move up out of sight
   }
 }
 
