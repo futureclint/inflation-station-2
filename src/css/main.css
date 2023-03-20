@@ -157,7 +157,10 @@ header .subtitle {
 }
 
 .calculations ul {
+  display: block;
+  max-width: fit-content;
   padding: 0;
+  margin: 0 auto;
   list-style-type: none;
 }
 
@@ -166,12 +169,13 @@ header .subtitle {
   padding: 12px;
   margin-bottom: 1px;
   background-color: #333339;
+  line-height: 1.67em;
   color: #ddddee;
 }
 
 .calculations strong {
-  padding: 4px 8px;
-  margin: 0 4px;
+  padding: 2px 6px;
+  margin: 0 2px;
   border: 1px solid #666669;
   border-radius: 7px;
   color: white;
