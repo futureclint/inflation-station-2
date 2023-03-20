@@ -12,7 +12,7 @@ h1, h2, h3, h4, h5, p {
 
 hr {
   height: 1px;
-  margin: 30px 0;
+  margin: 20px;
   border: none;
   background-color: #3b3c3d;
 }
@@ -187,4 +187,5 @@ footer {
 
 footer span {
   display: block;
+  line-height: 1.5em;
 }
