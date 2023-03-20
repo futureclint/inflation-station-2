@@ -21,34 +21,37 @@ a {
   color: #e222a9;
 }
 
-header .message {
+.message {
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  max-height: 1000px;
   height: fit-content;
+  position: static;
   background: #ff2254;
   background: linear-gradient(90deg, #ff2254 0%, #c623ff 100%);
   transform-origin: bottom left;
-  transition: transform 0.2s ease;
+  transition: max-height 0.2s ease, transform 0.2s ease;
   overflow: hidden;
 }
-header .message.close {
+.message.close {
+  max-height: 0;
   transform: translate(0, -100%);
 }
 
-header .message span {
+.message span {
   display: block;
   margin: 3px 20px 6px 20px;
 }
 
-header .message button {
+.message button {
   border: none;
   background: transparent;
   cursor: pointer;
 }
 
-header .message img {
+.message img {
   width: 12px;
   height: auto;
   margin: 2px 20px 2px 20px;
@@ -57,7 +60,7 @@ header .message img {
 header .title {
   display: flex;
   justify-content: space-between;
-  margin: 30px 20px;
+  margin: 30px;
 }
 
 header .logo {

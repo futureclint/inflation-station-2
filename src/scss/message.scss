@@ -1,0 +1,38 @@
+$transition-time: 0.2s;
+
+.message {
+  display: flex;
+  justify-content: space-between; // spaces two children to start and end
+  align-items: center; // vertical centering
+  width: 100%;
+  max-height: 1000px; // larger number than it would ever be, needed for transition
+  height: fit-content;
+  position: static;
+  background: $brand-end; // fallback
+  background: linear-gradient(90deg, $brand-end 0%, $brand-start 100%);
+  transform-origin: bottom left; // so whole element hides out of sight to top no matter the height
+  transition: max-height $transition-time ease,
+              transform $transition-time ease;
+  overflow: hidden;
+  &.close {
+    max-height: 0; // transitions height to remove height from DOM (height doesn't work)
+    transform: translate(0, -100%); // move up by the exact amount of its dynamic height
+  }
+}
+
+.message span {
+  display: block;
+  margin: 3px 20px 6px 20px;
+}
+
+.message button {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.message img {
+  width: 12px;
+  height: auto;
+  margin: 2px 20px 2px 20px;
+}

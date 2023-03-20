@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import './css/main.css';
+import Message from './components/Message';
 import Header from './components/Header';
 import Calculate from './components/Calculate';
 import Calculations from './components/Calculations';
@@ -12,6 +13,7 @@ function App() {
 
   return (
     <div className="App">
+      <Message />
       <Header />
       <hr />
       <main>
