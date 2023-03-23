@@ -193,10 +193,29 @@ header .subtitle {
 }
 
 footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   padding: 0 20px;
+  margin-bottom: 20px;
+}
+@media (max-width: 640px) {
+  footer {
+    flex-direction: column;
+  }
+}
+
+footer section:last-child span {
+  text-align: right;
+}
+@media (max-width: 640px) {
+  footer section:last-child span {
+    text-align: left;
+  }
 }
 
 footer span {
   display: block;
   line-height: 1.5em;
+  white-space: nowrap;
 }

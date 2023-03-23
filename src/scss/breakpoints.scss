@@ -8,6 +8,13 @@
   }
 }
 
+// <= 640px
+@mixin width-640 {
+  @media (max-width: 640px) {
+    @content;
+  }
+}
+
 // Extra Small (xs)
 @mixin width-xs {
   @media (max-width: 540px) {
