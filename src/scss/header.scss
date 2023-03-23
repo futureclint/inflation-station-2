@@ -4,7 +4,7 @@ header .title {
   justify-content: space-between;
   margin: 30px;
 
-  @include width-sm {
+  @include width-768 {
     flex-direction: column;
   }
 }
@@ -16,7 +16,7 @@ header .logo {
 header .subtitle {
   font-size: 1.25em;
   font-weight: 400;
-  @include width-sm {
+  @include width-768 {
     margin-top: 10px;
     font-size: 1.0em;
   }

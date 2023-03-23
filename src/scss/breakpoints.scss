@@ -1,8 +1,8 @@
 // Breakpoints
 // Usage: @include width-sm { }
 
-// Small (sm)
-@mixin width-sm {
+// <= 768px
+@mixin width-768 {
   @media (max-width: 768px) {
     @content;
   }
@@ -15,8 +15,8 @@
   }
 }
 
-// Extra Small (xs)
-@mixin width-xs {
+// <= 540px
+@mixin width-540 {
   @media (max-width: 540px) {
     @content;
   }
