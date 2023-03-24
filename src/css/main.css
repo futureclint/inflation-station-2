@@ -174,11 +174,17 @@ header .subtitle {
 
 .calculations li {
   display: block;
+  position: relative;
+  width: 100%;
+  left: 0;
   padding: 12px;
   margin-bottom: 1px;
   background-color: #333339;
   line-height: 1.67em;
   color: #ddddee;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0);
+  z-index: 1;
+  transition: box-shadow 0.2s, width 0.2s, left 0.2s;
 }
 .calculations li:first-child {
   border-top-left-radius: 7px;
@@ -187,6 +193,13 @@ header .subtitle {
 .calculations li:last-child {
   border-bottom-left-radius: 7px;
   border-bottom-right-radius: 7px;
+}
+.calculations li:hover {
+  position: relative;
+  width: calc(100% + 10px);
+  left: -5px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.67);
+  z-index: 1000;
 }
 
 .calculations strong {
