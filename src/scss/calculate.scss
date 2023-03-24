@@ -10,8 +10,10 @@
   margin: 10px 10px 20px 10px;
 }
 .calculate input {
-  padding: 4px 6px;
+  padding: 8px 16px;
   margin: 10px;
+  border: 1px solid gray;
+  border-radius: $border-radius;
   font-size: 1em;
 
   &:disabled {
@@ -35,7 +37,7 @@
   margin: 10px;
   border: 1px solid;
   border-color: $background;
-  border-radius: 7px;
+  border-radius: $border-radius;
   background: $brand-middle; // middle gradient value as a fallback
   background: linear-gradient(90deg, $brand-start 0%, $brand-end 100%);
   box-shadow: 0 1px 6px rgba(0,0,0,0.33);
