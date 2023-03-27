@@ -17,3 +17,9 @@ hr {
 a {
   color: $brand-middle;
 }
+input {
+  -webkit-appearance: none;
+  -ms-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}

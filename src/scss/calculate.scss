@@ -16,11 +16,32 @@
 .calculate input {
   padding: 8px 16px;
   margin: 10px;
-  border: 1px solid gray;
+  border: 2px solid;
+  border-color: #b1b1b1;
   border-radius: $border-radius;
+  background-color: #f0f0f0;
+  box-shadow: 0 1px 6px rgba(black,0.33);
   font-size: 1em;
+  transition: border-color 0.2s, background-color 0.2s, box-shadow 0.2s, color 0.2s;
 
+  &::placeholder {
+    color: #909090;
+  }
+  &:hover {
+    border-color: rgba($brand-end,0.67);
+    background-color: #ffffff;
+    box-shadow: 0 1px 6px rgba(black, 0.67);
+    color: $brand-start;
+  }
+  &:focus {
+    border-color: $brand-start;
+    background-color: #ffffff;
+    box-shadow: 0 1px 6px rgba(black,1);
+    outline: none;
+    color: $brand-middle;
+  }
   &:disabled {
+    border-color: #616161;
     background-color: rgba(white,0.1);
   }
 }
@@ -43,7 +64,7 @@
   display: block;
   padding: 8px 16px;
   margin: 10px;
-  border: 1px solid;
+  border: 2px solid;
   border-color: $background;
   border-radius: $border-radius;
   background: $brand-middle; // middle gradient value as a fallback
