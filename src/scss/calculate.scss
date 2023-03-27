@@ -1,3 +1,4 @@
+// Calculate section
 .calculate {
   width: fit-content;
   margin: 0 auto;
@@ -6,9 +7,12 @@
   }
 }
 
+// Instructions area
 .calculate .instructions {
-  margin: 10px 10px 20px 10px;
+  margin: 10px 10px 10px 10px;
 }
+
+// All input boxes
 .calculate input {
   padding: 8px 16px;
   margin: 10px;
@@ -20,6 +24,8 @@
     background-color: rgba(white,0.1);
   }
 }
+
+// Spans
 .calculate span.in {
   display: inline-block;
   margin: 10px;
@@ -31,6 +37,8 @@
   display: block;
   margin: 10px;
 }
+
+// Calculate button
 .calculate button {
   display: block;
   padding: 8px 16px;
