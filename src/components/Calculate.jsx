@@ -107,15 +107,19 @@ function Calculate({calculations, setCalculations}) {
         <em>Enter any year between {startingYear}–{currentYear}</em>
       </div>
       <form onSubmit={submit}>
-        <input
-          value={initialAmount}
-          // On change, call test input function, if input is valid set it, otherwise don't allow it
-          onChange={event => { if (testInputAmount(event.target.value)) setInitialAmount(event.target.value); }}
-          type="text"
-          placeholder={ finalAmount ? "?" : "Initial Amount" }
-          disabled={ finalAmount ? true : false }
-          required={ finalAmount ? false : true }
-        />
+        <div className="input-group initial-amount">
+          <span className="usd">$</span>
+          <input
+            className="amount"
+            value={initialAmount}
+            // On change, call test input function, if input is valid set it, otherwise don't allow it
+            onChange={event => { if (testInputAmount(event.target.value)) setInitialAmount(event.target.value); }}
+            type="text"
+            placeholder={ finalAmount ? "?" : "Initial Amount" }
+            disabled={ finalAmount ? true : false }
+            required={ finalAmount ? false : true }
+          />
+        </div>
         <span className="in">in</span>
         <input
           value={initialYear}

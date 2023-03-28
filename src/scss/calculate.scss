@@ -46,6 +46,31 @@
   }
 }
 
+// Input groups
+.calculate .input-group {
+  display: flex;
+  width: fit-content;
+  align-items: center;
+  position: relative; // needed for inner absolutely positioned elements
+}
+
+.calculate .input-group.initial-amount {
+  input {
+    padding-left: 38px; // extra padding for $
+    margin: 0;
+  }
+  span.usd {
+    position: absolute;
+    left: 18px;
+    color: #909090;
+    user-select: none;
+    pointer-events: none;
+  }
+  &:hover > span.usd {
+    color: $brand-start;
+  }
+}
+
 // Spans
 .calculate span.in {
   display: inline-block;

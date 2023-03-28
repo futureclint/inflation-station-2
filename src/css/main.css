@@ -137,6 +137,28 @@ header .subtitle {
   background-color: rgba(255, 255, 255, 0.1);
 }
 
+.calculate .input-group {
+  display: flex;
+  width: fit-content;
+  align-items: center;
+  position: relative;
+}
+
+.calculate .input-group.initial-amount input {
+  padding-left: 38px;
+  margin: 0;
+}
+.calculate .input-group.initial-amount span.usd {
+  position: absolute;
+  left: 18px;
+  color: #909090;
+  user-select: none;
+  pointer-events: none;
+}
+.calculate .input-group.initial-amount:hover > span.usd {
+  color: #c623ff;
+}
+
 .calculate span.in {
   display: inline-block;
   margin: 10px;
