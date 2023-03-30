@@ -9,27 +9,23 @@
 
 // Instructions area
 .calculate .instructions {
-  margin: 10px 10px 10px 10px;
+  margin: 20px 10px;
 }
 
-.calculate form {
-  outline: 1px dashed yellow; // TEMP
-}
-
+// Form row
 .calculate .form-row {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-// Input groups
+// Input wrapper
 .calculate .input-group {
+  width: 50%;
   flex-grow: 2;
   display: inline-flex;
   align-items: center;
   position: relative; // needed for inner absolutely positioned elements
-  padding: 10px;
-  outline: 1px dashed red;
 }
 
 // All input boxes
@@ -43,7 +39,6 @@
   box-shadow: 0 1px 6px rgba(black,0.33);
   font-size: 1em;
   transition: border-color 0.2s, background-color 0.2s, box-shadow 0.2s, color 0.2s;
-
   &::placeholder {
     color: #909090;
   }
@@ -51,7 +46,7 @@
     border-color: rgba($brand-end,0.67);
     background-color: #ffffff;
     box-shadow: 0 1px 6px rgba(black, 0.67);
-    color: $brand-start;
+    //color: $brand-start;
   }
   &:focus {
     border-color: $brand-start;
@@ -66,29 +61,27 @@
   }
 }
 
-.calculate .input-group {
-  input.amount {
-    padding-left: 38px; // extra padding for $
-    margin: 0;
-  }
-  span.usd {
-    position: absolute;
-    left: 18px;
-    color: #909090;
-    user-select: none;
-    pointer-events: none;
-    transition: color 0.2s;
-  }
-  input.amount:focus + span.usd {
-    color: $brand-middle;
-  }
+// Amount input boxes
+.input-group.amount input {
+  padding-left: 24px; // extra padding for $
+  margin: 0;
+}
+span.usd {
+  position: absolute;
+  left: 10px; // positioning for $
+  color: #909090;
+  user-select: none;
+  pointer-events: none;
+  transition: color 0.2s;
+}
+input:focus + span.usd {
+  color: $brand-middle;
 }
 
 // Spans
 .calculate span.in {
   display: inline-block;
-  margin: 0;
-  outline: 1px dashed green;
+  margin: 10px; // spacing between inputs
   @include width-540 {
     display: block;
   }
@@ -101,8 +94,8 @@
 // Calculate button
 .calculate button {
   display: block;
-  padding: 8px 16px;
-  margin: 10px;
+  padding: 8px 24px;
+  margin: 20px 0 0 0;
   border: 2px solid;
   border-color: $background;
   border-radius: $border-radius;
@@ -127,5 +120,8 @@
   }
   &:hover {
     cursor: pointer;
+  }
+  @include width-540 {
+    width: 100%;
   }
 }

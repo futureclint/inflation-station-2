@@ -114,28 +114,27 @@ function Calculate({calculations, setCalculations}) {
 
         {/* From Row: Initial Amount, Initial Year */}
         <div className="form-row">
-          <div className="input-group initial-amount">
+          <div className="input-group amount">
             <input
-              className="amount"
               value={initialAmount}
               // On change, call test input function, if input is valid set it, otherwise don't allow it
               onChange={event => { if (testInputAmount(event.target.value)) setInitialAmount(event.target.value); }}
               type="text"
-              placeholder={ finalAmount ? "?" : "Initial Amount" }
+              placeholder={ finalAmount ? "?" : "Amount" }
               disabled={ finalAmount ? true : false }
               required={ finalAmount ? false : true }
             />
             <span className="usd">$</span>
           </div>
           <span className="in">in</span>
-          <div className="input-group">
+          <div className="input-group year">
             <input
               value={initialYear}
               // On change, call test input function, if input is valid set it, otherwise don't allow it
               onChange={event => { if (testInputYear(event.target.value)) setInitialYear(event.target.value); }}
               type="text"
               maxLength="4"
-              placeholder="Initial Year"
+              placeholder="Year"
               required
             />
           </div>
@@ -148,28 +147,27 @@ function Calculate({calculations, setCalculations}) {
 
         {/* Form Row: Final Amount, Final Year */}
         <div className="form-row">
-          <div className="input-group">
+          <div className="input-group amount">
             <input
-              className="amount"
               value={finalAmount}
               // On change, call test input function, if input is valid set it, otherwise don't allow it
               onChange={event => { if (testInputAmount(event.target.value)) setFinalAmount(event.target.value); }}
               type="text"
-              placeholder={ initialAmount ? "?" : "Final Amount"}
+              placeholder={ initialAmount ? "?" : "Amount"}
               disabled={ initialAmount ? true : false }
               required={ initialAmount ? false : true }
             />
             <span className="usd">$</span>
           </div>
           <span className="in">in</span>
-          <div className="input-group">
+          <div className="input-group year">
             <input
               value={finalYear}
               // On change, call test input function, if input is valid set it, otherwise don't allow it
               onChange={event => { if (testInputYear(event.target.value)) setFinalYear(event.target.value); }}
               type="text"
               maxLength="4"
-              placeholder="Final Year"
+              placeholder="Year"
               required
             />
           </div>
