@@ -105,9 +105,28 @@ header .subtitle {
   margin: 10px 10px 10px 10px;
 }
 
+.calculate form {
+  outline: 1px dashed yellow;
+}
+
+.calculate .form-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.calculate .input-group {
+  flex-grow: 2;
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  padding: 10px;
+  outline: 1px dashed red;
+}
+
 .calculate input {
+  width: 100%;
   padding: 8px 16px;
-  margin: 10px;
   border: 2px solid;
   border-color: #b1b1b1;
   border-radius: 7px;
@@ -137,31 +156,26 @@ header .subtitle {
   background-color: rgba(255, 255, 255, 0.1);
 }
 
-.calculate .input-group {
-  display: flex;
-  width: fit-content;
-  align-items: center;
-  position: relative;
-}
-
-.calculate .input-group.initial-amount input {
+.calculate .input-group input.amount {
   padding-left: 38px;
   margin: 0;
 }
-.calculate .input-group.initial-amount span.usd {
+.calculate .input-group span.usd {
   position: absolute;
   left: 18px;
   color: #909090;
   user-select: none;
   pointer-events: none;
+  transition: color 0.2s;
 }
-.calculate .input-group.initial-amount:hover > span.usd {
-  color: #c623ff;
+.calculate .input-group input.amount:focus + span.usd {
+  color: #e222a9;
 }
 
 .calculate span.in {
   display: inline-block;
-  margin: 10px;
+  margin: 0;
+  outline: 1px dashed green;
 }
 @media (max-width: 540px) {
   .calculate span.in {

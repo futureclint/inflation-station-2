@@ -12,10 +12,30 @@
   margin: 10px 10px 10px 10px;
 }
 
+.calculate form {
+  outline: 1px dashed yellow; // TEMP
+}
+
+.calculate .form-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+// Input groups
+.calculate .input-group {
+  flex-grow: 2;
+  display: inline-flex;
+  align-items: center;
+  position: relative; // needed for inner absolutely positioned elements
+  padding: 10px;
+  outline: 1px dashed red;
+}
+
 // All input boxes
 .calculate input {
+  width: 100%; // fill input group container
   padding: 8px 16px;
-  margin: 10px;
   border: 2px solid;
   border-color: #b1b1b1;
   border-radius: $border-radius;
@@ -46,16 +66,8 @@
   }
 }
 
-// Input groups
 .calculate .input-group {
-  display: flex;
-  width: fit-content;
-  align-items: center;
-  position: relative; // needed for inner absolutely positioned elements
-}
-
-.calculate .input-group.initial-amount {
-  input {
+  input.amount {
     padding-left: 38px; // extra padding for $
     margin: 0;
   }
@@ -65,16 +77,18 @@
     color: #909090;
     user-select: none;
     pointer-events: none;
+    transition: color 0.2s;
   }
-  &:hover > span.usd {
-    color: $brand-start;
+  input.amount:focus + span.usd {
+    color: $brand-middle;
   }
 }
 
 // Spans
 .calculate span.in {
   display: inline-block;
-  margin: 10px;
+  margin: 0;
+  outline: 1px dashed green;
   @include width-540 {
     display: block;
   }
