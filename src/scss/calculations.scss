@@ -3,28 +3,28 @@
 }
 .calculations ul {
   display: block;
-  min-width: 768px;
-  max-width: fit-content; // makes width the largest item if above min-width
+  //min-width: 768px;
+  //max-width: fit-content; // makes width the largest item if above min-width
   padding: 0;
   margin: 0 auto;
   list-style-type: none;
   @include width-768 {
-    min-width: 0;
+    //min-width: 0;
   }
 }
 .calculations li {
   display: block;
   position: relative;
-  width: 100%;
-  left: 0;
+  max-width: 720px;
   padding: 12px;
-  margin-bottom: 1px;
+  margin: 0 auto;
+  border: 1px solid $background;
   background-color: #333339;
   line-height: 1.67em;
   color: #ddddee;
   box-shadow: 0 2px 12px rgba(0,0,0,0);
   z-index: 1;
-  transition: box-shadow 0.2s, width 0.2s, left 0.2s;
+  transition: border-color 0.2s, box-shadow 0.2s, width 0.2s, left 0.2s;
   &:first-child {
     border-top-left-radius: $border-radius;
     border-top-right-radius: $border-radius;
@@ -35,8 +35,7 @@
   }
   &:hover {
     position: relative;
-    width: calc(100% + 10px);
-    left: -5px;
+    border: 1px solid #ffffff;
     box-shadow: 0 2px 12px rgba(0,0,0,0.67);
     z-index: 1000;
   }

@@ -224,31 +224,23 @@ input:focus + span.usd {
 
 .calculations ul {
   display: block;
-  min-width: 768px;
-  max-width: fit-content;
   padding: 0;
   margin: 0 auto;
   list-style-type: none;
 }
-@media (max-width: 768px) {
-  .calculations ul {
-    min-width: 0;
-  }
-}
-
 .calculations li {
   display: block;
   position: relative;
-  width: 100%;
-  left: 0;
+  max-width: 720px;
   padding: 12px;
-  margin-bottom: 1px;
+  margin: 0 auto;
+  border: 1px solid #1b1c1d;
   background-color: #333339;
   line-height: 1.67em;
   color: #ddddee;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0);
   z-index: 1;
-  transition: box-shadow 0.2s, width 0.2s, left 0.2s;
+  transition: border-color 0.2s, box-shadow 0.2s, width 0.2s, left 0.2s;
 }
 .calculations li:first-child {
   border-top-left-radius: 7px;
@@ -260,8 +252,7 @@ input:focus + span.usd {
 }
 .calculations li:hover {
   position: relative;
-  width: calc(100% + 10px);
-  left: -5px;
+  border: 1px solid #ffffff;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.67);
   z-index: 1000;
 }
