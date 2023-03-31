@@ -12,8 +12,12 @@
     //min-width: 0;
   }
 }
+
+// Calculation list item
 .calculations li {
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   position: relative;
   max-width: 720px;
   padding: 12px;
@@ -40,6 +44,9 @@
     z-index: 1000;
   }
 }
+.calculations li span {
+  margin-right: 20px; // spacing between text and close button
+}
 .calculations strong {
   padding: 2px 6px;
   margin: 0 2px;
@@ -47,6 +54,21 @@
   border-radius: 7px;
   color: white;
 }
+
+// Delete calculation button
+.calculations button {
+  display: none; // TEMP: hidden until functional
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+.calculations img {
+  width: 12px;
+  height: auto;
+  margin: 2px 0;
+}
+
+// No calculations message
 .calculations .no-calculations {
   display: block;
   text-align: center;
