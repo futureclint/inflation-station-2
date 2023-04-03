@@ -16,11 +16,11 @@
 // Calculation list item
 .calculations li {
   display: flex;
-  align-items: center;
+  align-items: stretch;
   justify-content: space-between;
   position: relative;
   max-width: 720px;
-  padding: 12px;
+  //padding: 12px;
   margin: 0 auto;
   border: 1px solid $background;
   background-color: #333339;
@@ -45,7 +45,8 @@
   }
 }
 .calculations li span {
-  margin-right: 20px; // spacing between text and close button
+  display: block;
+  margin: 12px 16px; // spacing around text
 }
 .calculations strong {
   padding: 2px 6px;
@@ -58,14 +59,16 @@
 // Delete calculation button
 .calculations button {
   display: none; // TEMP: hidden until functional
-  border: none;
-  background: transparent;
+  //display: flex;
+  align-items: center;
+  border: none; // remove default border
+  background-color: transparent; // remove default background color
   cursor: pointer;
 }
 .calculations img {
   width: 12px;
   height: auto;
-  margin: 2px 0;
+  margin: 12px;
 }
 
 // No calculations message

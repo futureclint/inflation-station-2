@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   padding: 0;
   margin: 0;
@@ -230,11 +234,10 @@ input:focus + span.usd {
 }
 .calculations li {
   display: flex;
-  align-items: center;
+  align-items: stretch;
   justify-content: space-between;
   position: relative;
   max-width: 720px;
-  padding: 12px;
   margin: 0 auto;
   border: 1px solid #1b1c1d;
   background-color: #333339;
@@ -260,7 +263,8 @@ input:focus + span.usd {
 }
 
 .calculations li span {
-  margin-right: 20px;
+  display: block;
+  margin: 12px 16px;
 }
 
 .calculations strong {
@@ -273,15 +277,16 @@ input:focus + span.usd {
 
 .calculations button {
   display: none;
+  align-items: center;
   border: none;
-  background: transparent;
+  background-color: transparent;
   cursor: pointer;
 }
 
 .calculations img {
   width: 12px;
   height: auto;
-  margin: 2px 0;
+  margin: 12px;
 }
 
 .calculations .no-calculations {
