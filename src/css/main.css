@@ -189,7 +189,7 @@ input:focus + span.usd {
 
 .calculate button {
   display: block;
-  padding: 8px 24px;
+  padding: 10px 24px;
   margin: 20px 0 0 0;
   border: 2px solid;
   border-color: #1b1c1d;
