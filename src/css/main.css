@@ -32,6 +32,10 @@ input {
   appearance: none;
 }
 
+::selection {
+  background-color: #e222a9;
+}
+
 .message {
   display: flex;
   justify-content: space-between;
