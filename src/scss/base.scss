@@ -28,4 +28,5 @@ input {
 }
 ::selection {
   background-color: $brand-middle;
+  color: white; // override text color in case it is not white
 }
